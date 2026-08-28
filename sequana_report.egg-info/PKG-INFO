@@ -1,0 +1,77 @@
+Metadata-Version: 2.4
+Name: sequana_report
+Version: 0.1.0
+Summary: Shared HTML report generation infrastructure for Sequana
+Author-email: Sequana Development Team <thomas.cokelaer@pasteur.fr>
+License: BSD-3-Clause
+Project-URL: Homepage, https://github.com/sequana/sequana_report
+Project-URL: Documentation, https://sequana.readthedocs.io
+Project-URL: Repository, https://github.com/sequana/sequana_report
+Keywords: bioinformatics,ngs,sequencing,html,reporting
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: License :: OSI Approved :: BSD License
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: jinja2>=3.0
+Requires-Dist: colorlog>=6.0
+Requires-Dist: pandas>=1.0
+Provides-Extra: dev
+Requires-Dist: pytest>=6.0; extra == "dev"
+Requires-Dist: pytest-cov>=2.0; extra == "dev"
+Requires-Dist: black>=21.0; extra == "dev"
+Requires-Dist: isort>=5.0; extra == "dev"
+Requires-Dist: flake8>=3.9; extra == "dev"
+Requires-Dist: pre-commit>=2.0; extra == "dev"
+
+# sequana_report
+
+Shared HTML report generation infrastructure for Sequana.
+
+This package provides the base classes, templates, and utilities used by the Sequana ecosystem to generate consistent, professional HTML reports.
+
+## Features
+
+- **SequanaBaseModule**: Base class for all report generators
+- **Jinja2 Templates**: Standard and customizable HTML report templates
+- **CSS/JS Assets**: Bootstrap, jQuery, DataTables, Plotly integration
+- **Utilities**: DataTable, CanvasJS line graphs for interactive visualizations
+
+## Installation
+
+```bash
+pip install sequana_report
+```
+
+## Usage
+
+```python
+from sequana_report import SequanaBaseModule
+
+class MyReport(SequanaBaseModule):
+    def __init__(self, data):
+        super().__init__()
+        self.title = "My Report"
+        self.sections = [
+            {"name": "Overview", "anchor": "overview", "content": "<p>Hello</p>"}
+        ]
+        self.create_html("my_report.html")
+```
+
+## Dependencies
+
+- Jinja2 >= 3.0
+- pandas >= 1.0
+- colorlog >= 6.0
+
+## License
+
+BSD-3-Clause

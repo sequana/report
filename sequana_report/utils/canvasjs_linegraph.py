@@ -15,8 +15,8 @@
 #  documentation: http://sequana.readthedocs.io
 #
 ##############################################################################
-"""Sequana class to plot a CanvasJS linegraph from an embedded csv file.
-"""
+"""Sequana class to plot a CanvasJS linegraph from an embedded csv file."""
+
 import colorlog
 
 from .canvasjs_base import CanvasJS
@@ -90,9 +90,7 @@ class CanvasJSLineGraph(CanvasJS):
             }}
         }});
     }};
-        """.format(
-            self.html_id, init_var, fill_array, self.variables
-        )
+        """.format(self.html_id, init_var, fill_array, self.variables)
         self.data_section = [{"dataPoints": var} for var in variable]
         return function
 
@@ -190,8 +188,6 @@ class CanvasJSLineGraph(CanvasJS):
         processData_{0}(csv_{0});
     }});
 </script>
-        """.format(
-            self.html_id
-        )
+        """.format(self.html_id)
         js += self.create_div_chart_container("height: 450px; width: 100%;")
         return js

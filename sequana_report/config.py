@@ -2,6 +2,7 @@
 
 Manages asset paths (CSS, JS, templates) and report output settings.
 """
+
 import os
 from pathlib import Path
 
@@ -28,6 +29,7 @@ except Exception:
 # Version (read from pyproject.toml or package metadata)
 try:
     from importlib.metadata import version
+
     __version__ = version("sequana_report")
 except Exception:
     __version__ = "0.1.0"

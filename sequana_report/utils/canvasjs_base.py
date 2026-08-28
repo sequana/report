@@ -15,8 +15,7 @@
 #  documentation: http://sequana.readthedocs.io
 #
 ##############################################################################
-""" Base class for CanvasJS plot to set legend, title, axis and commun things.
-"""
+"""Base class for CanvasJS plot to set legend, title, axis and commun things."""
 
 
 class CanvasJS(object):

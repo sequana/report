@@ -16,6 +16,7 @@
 #
 ##############################################################################
 """Generic module is the parent module of all other module"""
+
 import base64
 import io
 import os
@@ -152,9 +153,7 @@ class SequanaBaseModule(object):
         }});
     }});
 </script>
-        """.format(
-            html_id, hidden
-        )
+        """.format(html_id, hidden)
         content = js + content
         return link, content
 
@@ -252,9 +251,7 @@ class SequanaBaseModule(object):
     </ul>
 </div>
 <a href="#" data-jq-dropdown="#jq-dropdown-{1}">Subchromosome</a>
-        """.format(
-            "\n".join(option_list), html_id
-        )
+        """.format("\n".join(option_list), html_id)
         return html
 
     def add_fotorama(
