@@ -33,7 +33,7 @@ logger = colorlog.getLogger(__name__)
 
 try:
     from sequana.lazy import pandas as pd
-except ImportError:  # pragma: no cover
+except ImportError:
     import pandas as pd
 
 
