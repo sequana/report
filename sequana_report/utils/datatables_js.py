@@ -31,7 +31,10 @@ import colorlog
 
 logger = colorlog.getLogger(__name__)
 
-from sequana.lazy import pandas as pd
+try:
+    from sequana.lazy import pandas as pd
+except ImportError:  # pragma: no cover
+    import pandas as pd
 
 
 class DataTableFunction(object):
