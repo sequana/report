@@ -14,7 +14,7 @@
 #  documentation: http://sequana.readthedocs.io
 #
 ##############################################################################
-""" Utilities to create a Jquery DataTable for your HTML file.
+"""Utilities to create a Jquery DataTable for your HTML file.
 
 
 .. autosummary::
@@ -24,6 +24,7 @@
 
 
 """
+
 from collections import OrderedDict
 
 import colorlog
@@ -252,16 +253,12 @@ class DataTableFunction(object):
             fct = """function(data, type, row, meta){{
                 return '<a href="'+row.{0}+'" target="_blank">'+data+'</a>';
             }}
-            """.format(
-                link_col
-            )
+            """.format(link_col)
         else:  # pragma: no cover
             fct = """function(data, type, row, meta){{
                 return '<a href="'+row.{0}+'">'+data+'</a>';
             }}
-            """.format(
-                link_col
-            )
+            """.format(link_col)
         try:  # pragma: no cover
             self.datatable_columns[target_col]["render"] = fct
         except KeyError:  # pragma: no cover
@@ -282,9 +279,7 @@ class DataTableFunction(object):
         fct = """function(data, type, row, meta){{
             return '<a href="#" data-toggle="tooltip" title="'+row.{0}+'">'+data+'</a>';
         }}
-        """.format(
-            tooltips_col
-        )
+        """.format(tooltips_col)
         try:
             self.datatable_columns[target_col]["render"] = fct
         except KeyError:
@@ -367,9 +362,7 @@ class DataTable(object):
         {0} = null;
     }});
 </script>
-        """.format(
-            self.html_id, self.datatable.html_id
-        )
+        """.format(self.html_id, self.datatable.html_id)
         html += self._create_hidden_csv(**kwargs)
         html += self._create_html_table(style)
         return html
@@ -405,9 +398,7 @@ class DataTable(object):
     {0}
         {1}
     </table>
-        """.format(
-            html_table, header
-        )
+        """.format(html_table, header)
         return html_table
 
     def create_javascript_function(self):
