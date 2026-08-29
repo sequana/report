@@ -3,7 +3,6 @@
 Manages asset paths (CSS, JS, templates) and report output settings.
 """
 
-import os
 from pathlib import Path
 
 # Package directory
