@@ -305,3 +305,34 @@ def test_add_fotorama_js_added_once(tmpdir_fixture):
 
     assert "cdnjs.cloudflare.com" in html1
     assert "cdnjs.cloudflare.com" not in html2
+
+
+def test_copy_file_existing_directory(tmpdir_fixture):
+    """Test copy_file when target directory already exists."""
+    module = SequanaBaseModule()
+
+    test_file = os.path.join(str(tmpdir_fixture), "test_input.txt")
+    with open(test_file, "w") as f:
+        f.write("test content")
+
+    relative_path1 = module.copy_file(test_file, "custom_dir")
+    relative_path2 = module.copy_file(test_file, "custom_dir")
+
+    assert os.path.isfile(os.path.join(config.output_dir, relative_path1))
+    assert os.path.isfile(os.path.join(config.output_dir, relative_path2))
+
+
+def test_copy_file_existing_file_not_dir(tmpdir_fixture):
+    """Test copy_file when target exists but is not a directory."""
+    module = SequanaBaseModule()
+
+    test_file = os.path.join(str(tmpdir_fixture), "test_input.txt")
+    with open(test_file, "w") as f:
+        f.write("test content")
+
+    obstacle_path = os.path.join(config.output_dir, "blocking_file")
+    with open(obstacle_path, "w") as f:
+        f.write("obstacle")
+
+    with pytest.raises(FileExistsError):
+        module.copy_file(test_file, "blocking_file")
