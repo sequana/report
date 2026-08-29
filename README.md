@@ -1,5 +1,10 @@
 # sequana_report
 
+[![Tests](https://github.com/sequana/sequana_report/workflows/Tests/badge.svg)](https://github.com/sequana/sequana_report/actions)
+[![License](https://img.shields.io/badge/license-BSD--3--Clause-blue)](https://github.com/sequana/sequana_report/blob/main/LICENSE)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyPI](https://img.shields.io/pypi/v/sequana_report.svg)](https://pypi.org/project/sequana_report/)
+
 Shared HTML report generation infrastructure for Sequana.
 
 This package provides the base classes, templates, and utilities used by the Sequana ecosystem to generate consistent, professional HTML reports.
