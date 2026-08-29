@@ -28,7 +28,7 @@
 from collections import OrderedDict
 
 import colorlog
-from sequana.lazy import pandas as pd
+import pandas as pd
 
 logger = colorlog.getLogger(__name__)
 
