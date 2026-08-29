@@ -28,13 +28,9 @@
 from collections import OrderedDict
 
 import colorlog
+import pandas as pd
 
 logger = colorlog.getLogger(__name__)
-
-try:
-    from sequana.lazy import pandas as pd
-except ImportError:
-    import pandas as pd
 
 
 class DataTableFunction(object):
